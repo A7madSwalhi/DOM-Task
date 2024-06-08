@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      Exercise #5: Input check for minimmum number of charecter should be 6 and
+      password match in both input
+    </title>
+    <style>
+      * {
+        font-family: Arial, sans-serif;
+      }
+
+      .err {
+        color: red;
+        font-size: 0.7em;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="pw">
+      <table>
+        <tr>
+          <td>Password (min 6 characters):</td>
+          <td>
+            <input
+              type="password"
+              name="password1"
+              id="password1"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw1_check" class="err"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>Repeat password:</td>
+          <td>
+            <input
+              type="password"
+              name="password2"
+              id="password2"
+              size="10"
+              placeholder="Password"
+            />
+          </td>
+          <td>
+            <div id="pw2_check" class="err"></div>
+          </td>
+        </tr>
+      </table>
+
+      <input type="submit" value="Submit" id="submitBtn" />
+    </form>
+    <script>
+      const pass1 = document.querySelector("#password1");
+      const pass2 = document.querySelector("#password2");
+      const btn = document.querySelector("#submitBtn");
+      const err1 = document.querySelector("#pw1_check");
+      const err2 = document.querySelector("#pw2_check");
+
+      document.forms[0].onsubmit = (e) => {
+        if (pass1.value.length < 6) {
+          err1.innerHTML = "Password must be at least 6 charchter longer";
+          e.preventDefault();
+        } else {
+          err1.innerHTML = "";
+        }
+
+        if (pass1.value !== pass2.value) {
+          err2.innerHTML = "Password do not match";
+          e.preventDefault();
+        } else {
+          err2.innerHTML = "";
+        }
+      };
+
+      // btn.addEventListener("submit", () => {});
+    </script>
+  </body>
+</html>

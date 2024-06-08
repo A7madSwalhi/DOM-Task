@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <select name="" id="countrys">
+      <option value="USA">USA</option>
+      <option value="Norway">Norway</option>
+      <option value="Sweden">Sweden</option>
+      <option value="Jordan">Jordan</option>
+      <option value="switzerland">switzerland</option>
+    </select>
+    <br />
+    <img src="" alt="" />
+    <script>
+      const ele = document.querySelector("#countrys");
+      const im = document.querySelector("img");
+
+      ele.addEventListener("change", () => {
+        if (ele.value == "USA") {
+          im.src = "images/usa.png";
+        } else if (ele.value == "Norway") {
+          im.src = "images/norway.png";
+        } else if (ele.value == "Sweden") {
+          im.src = "images/Sweden.png";
+        } else if (ele.value == "Jordan") {
+          im.src = "images/Jordan.png";
+        } else if (ele.value == "switzerland") {
+          im.src = "images/swiz.png";
+        }
+      });
+    </script>
+  </body>
+</html>
